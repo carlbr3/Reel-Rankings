@@ -1,14 +1,20 @@
 #root {
-    --navbar-bg-color: #050505;
-    --navbar-text-color: #000000;
-    --footer-bg-color: #040404;
-    --footer-text-color: #010101;
-    --footer-link-color: #f4f7f8;
-    --body-header-text-color: #233e46;
-    --body-text-color: #252d5a;
-    --body-link-color: #080909;
-    --body-link-hover-color: #61dafb;
-    --header-bg-color: #f4f7f8;
+  --main-bg-color: #e9f7f7;
+  --main-text-color: #fff;
+  --main-link-color: #61dafb;
+  --main-link-hover-color: #f1f5f6;
+  --main-link-visited-color: #61dafb;
+  --main-link-active-color: #61dafb;
+  --main-link-focus-color: #61dafb;
+  --navbar-bg-color: #050505;
+  --navbar-text-color: #000000;
+  --footer-bg-color: #040404;
+  --footer-text-color: #010101;
+  --footer-link-color: #f4f7f8;
+  --body-header-text-color: #233e46;
+  --body-text-color: #f4f7f9;
+  --body-link-color: #080909;
+  --body-link-hover-color: #61dafb;
     
   }
   .nav-link{
@@ -23,7 +29,7 @@
   }
   
   #home-icon {
-      color: var(--navbar-text-color);
+      color: white;
     }
     #home-icon:hover {
       color: var(--body-link-hover-color);
@@ -57,11 +63,11 @@
   }
   
   .icon{
-      color: var(--navbar-text-color)
+      color: white;
     
     }
     .icon:hover{
-    color: var(--body-link-hover-color)
+    color: #f1f6f4;
     }
   
   #social-links {
@@ -69,7 +75,7 @@
     
   }
   #social-links a {
-    color: #020202;
+    color: #fefafa;
   }
   #social-links a:hover{
     color:#f1f6f4;
