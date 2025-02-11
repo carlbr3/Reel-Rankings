@@ -4,25 +4,43 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
     return (
-        <nav className="navbar sticky-top navbar-expand-md border-bottom-custom navbar-custom" data-bs-theme="dark">
-            <div className="container-fluid">
-                <Link className="navbar-brand nav-item raleway-nav" to="/">
+        <nav className="navbar sticky-top navbar-expand-lg w-100">
+            <div className="container-fluid w-100">
+                <Link className="navbar-brand" to="/">
                     <FontAwesomeIcon icon={faHouse} id="home-icon" />  Reel-Rankings 🎥
                 </Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item px-4 raleway-nav">
+                    <ul className="d-flex justify-content-center align-items-center list-unstyled">
+                        <li className="nav-item px-4">
                             <Link className="nav-link" to="/Genres">Genres</Link>
                         </li>
-                        <li className="nav-item px-4 raleway-nav">
+                        <li className="nav-item px-4">
                             <Link className="nav-link" to="/My Reel Ranks">My Reel Ranks</Link>
                         </li>
-                        <li className="nav-item px-4 raleway-nav">
+                        <li className="nav-item px-4">
                             <Link className="nav-link" to="/Profile">Profile</Link>
                         </li>
                     </ul>
                 </div>
+                <div className="form-container collapse navbar-collapse" id="navbarNav">
+                    <form className="form login-form">
+                        <h1>Login</h1>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input className="form-input" type='text' name='username' />
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input className="form-input" type='password' name='password' />
+                        </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary" type='submit'>Login</button>
+                        </div>
+                    </form>
             </div>
-        </nav>
-    );
+        </div>
+    </nav>
+);
 }
+
+

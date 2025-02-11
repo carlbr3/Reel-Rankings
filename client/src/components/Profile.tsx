@@ -32,8 +32,8 @@ const Profile = () => {
     <div className="profile-container">
       {!isLoggedIn ? (
         <div className="auth-buttons">
-          <h2>Welcome to ReelRank</h2>
-          <p>Sign in to track your favorite movies and more!</p>
+          <h2>Welcome to Reel-Rankings</h2>
+          <p>Sign in to to create custom rankings of your favorite movies, and receive curated recommendations based on shared user preferences.</p>
           <button className="login-button" onClick={handleLogin}>
             Log In
           </button>

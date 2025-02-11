@@ -23,11 +23,15 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 35px 0;
   display: flex;
-  place-items: center;
+  place-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(17, 116, 119);
+  color: white;
+  padding: 1px 0;
+  text-align: center;
 }
 
 h1 {
@@ -42,7 +46,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #646262;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -65,4 +69,27 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+footer {
+  background-color: rgb(29, 172, 177);
+  color: white;
+  padding: 2px 0;
+  text-align: center;
+  border-style:groove;
+  border-color: rgb(9, 9, 9);
+  border-width: 10px;
+}
+
+header {
+  background-color: rgb(29, 172, 177);
+  color: rgb(252, 251, 251);
+  border-style:groove;
+  border-color: rgb(9, 9, 9);
+  border-width: 10px;
+  text-align: center;
+  color: white;
+  padding: 3px 0;
+  text-align: center;
+  margin: 3px 0;
 }

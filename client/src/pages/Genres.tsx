@@ -1,5 +1,6 @@
 import GenreComponent from "../components/Genre";
 
+
 interface Genre {
   id: number;
   name: string;

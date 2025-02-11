@@ -1,60 +1,56 @@
-import { useState, useEffect, useLayoutEffect } from "react";
-import { retrieveUsers } from "../api/userAPI";
-import type { UserData } from "../interfaces/UserData";
-import ErrorPage from "./ErrorPage";
-import UserList from '../components/UserList'; 
-import auth from '../utils/auth';
+import {useState, useEffect} from 'react';
+// import Movie from '../interfaces/Movie';
 
-const Home = () => {
+interface Movie {
+    title: string;
+    year: string;
+    genre: string;
+    awards: string;
+    director: string;
+    plot: string;
+    imdbID: string;
+    poster: string;
+    rating: string;
+    runtime: string;
+    actors: string;
+    country: string;
+    imDBRating: string;
+    website: string;
+  }
 
-    const [users, setUsers] = useState<UserData[]>([]);
-    const [error, setError] = useState(false);
-    const [loginCheck, setLoginCheck] = useState(false);
-
+  export default function HomePage() {
+    const [movie, setMovie] = useState<Movie | null>(null);
     useEffect(() => {
-        if (loginCheck) {
-            fetchUsers();
-        }
-    }, [loginCheck]);
+        const fetchMovie = async () => {
+            try {
+                const response = await fetch("/api/movie/random");
+                const data = await response.json();
+                console.log("Fetched movie data:", data); 
+                setMovie(data);
+              } catch (error) {
+                console.error("Error fetching random movie:", error);
+              }
+            };
+            fetchMovie();
+            }, []);
 
-    useLayoutEffect(() => {
-        checkLogin();
-    }, []);
-
-    const checkLogin = () => {
-        if (auth.loggedIn()) {
-            setLoginCheck(true);
-        }
-    };
-
-    const fetchUsers = async () => {
-        try {
-            const data = await retrieveUsers();
-            setUsers(data)
-        } catch (err) {
-            console.error('Failed to retrieve tickets:', err);
-            setError(true);
-        }
-    }
-
-    if (error) {
-        return <ErrorPage />;
-    }
-
-    return (
-        <>
-            {
-                !loginCheck ? (
-                    <div className='login-notice'>
-                        <h1>
-                            Login to view all your friends!
-                        </h1>
+            useEffect(() => {
+                console.log("Updated movie state:", movie); 
+              }, [movie]);
+                return (
+                    <div>
+                    <h1>Random Movie</h1>
+                    {movie ? (
+                        <div>
+                        <h2>{movie.title}</h2>
+                        <img src={movie.poster} alt={movie.title} />
+                        <p>{movie.plot}</p>
+                        </div>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
                     </div>
-                ) : (
-                    <UserList users={users} />
-                )}
-        </>
-    );
-};
+                );
+}
 
-export default Home;
+
