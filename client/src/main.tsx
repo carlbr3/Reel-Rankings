@@ -6,7 +6,7 @@ import App from './App.tsx';
 
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/HomePage.tsx';
-import Login from './pages/Login.tsx';
+import Login from './components/Login.tsx';
 
 const router = createBrowserRouter([
   {

@@ -7,32 +7,6 @@ interface User {
   email: string;
   // Add more user properties as needed
 }
-interface RankingProps {
-
-  movieTitle: string;
-
-}
-
-
-
-const Ranking = ({ movieTitle }: RankingProps) => {
-
-  return (
-
-    <div>
-
-      <h2>{movieTitle}</h2>
-
-      {/* Ranking component implementation */}
-
-    </div>
-
-  );
-
-};
-
-export { Ranking };
-
 
 const Profile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
