@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 const { Movie } = require("../models");
 
 const router = express.Router();

@@ -4,7 +4,9 @@ const { Ranking, Movie, User } = require("../models");
 const router = express.Router();
 
 // Get all rankings
-router.get("/", async (req, res) => {
+import { Request, Response } from "express";
+
+router.get("/", async (req: Request, res: Response) => {
   try {
     const rankings = await Ranking.findAll({ include: [User, Movie] });
     res.json(rankings);
@@ -14,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 // Rank a movie
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
   try {
     const { user_id, movie_id, ranking_position } = req.body;
     const newRanking = await Ranking.create({ user_id, movie_id, ranking_position });
