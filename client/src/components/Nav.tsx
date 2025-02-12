@@ -30,7 +30,7 @@ export default function Nav() {
                             <input className="form-input" type='text' name='username' />
                         </div>
                         <div className="form-group">
-                            <label>Password</label>
+                             <label>Password</label>
                             <input className="form-input" type='password' name='password' />
                         </div>
                         <div className="form-group">
