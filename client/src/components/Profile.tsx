@@ -13,10 +13,7 @@ const Profile = () => {
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // This will be replaced with actual auth logic later
-    navigate("/login");
-  };
+  
 
   const handleSignup = () => {
     navigate("/signup");
@@ -34,10 +31,7 @@ const Profile = () => {
         <div className="auth-buttons">
           <h2>Welcome to Reel-Rankings</h2>
           <p>Sign in to to create custom rankings of your favorite movies, and receive curated recommendations based on shared user preferences.</p>
-          <button className="login-button" onClick={handleLogin}>
-            Log In
-          </button>
-          <button className="signup-button" onClick={handleSignup}>
+          <button className="button btn-info" onClick={handleSignup}>
             Create Account
           </button>
         </div>

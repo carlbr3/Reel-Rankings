@@ -11,20 +11,20 @@ export default function Nav() {
                 </Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="d-flex justify-content-center align-items-center list-unstyled">
-                        <li className="nav-item px-4">
+                        <li className="nav-item px-5">
                             <Link className="nav-link" to="/Genres">Genres</Link>
                         </li>
-                        <li className="nav-item px-4">
+                        <li className="nav-item px-5">
                             <Link className="nav-link" to="/My Reel Ranks">My Reel Ranks</Link>
                         </li>
-                        <li className="nav-item px-4">
+                        <li className="nav-item px-5">
                             <Link className="nav-link" to="/Profile">Profile</Link>
                         </li>
                     </ul>
                 </div>
                 <div className="form-container collapse navbar-collapse" id="navbarNav">
                     <form className="form login-form">
-                        <h1>Login</h1>
+                        <h3>Login</h3>
                         <div className="form-group">
                             <label>Username</label>
                             <input className="form-input" type='text' name='username' />
