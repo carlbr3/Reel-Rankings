@@ -6,7 +6,7 @@ Reel-Rankings is for any user who wants to review and rate their favorite movies
 
 ## Installation
 
-The production version of the application can be found [here](https://dinner-and-movie.onrender.com). If you want to use this application, clone the repo and enter. ```npm start run:dev``` for full production.  ```Currently only front-end is working, try running npm run dev in client folder```
+The production version of the application can be found {}.....If you want to use this application, clone the repo and enter. ```npm start run:dev``` for full production.  ```Currently only front-end is working, try running npm run dev in client folder```
 
 ## Usage
 Currently links to pages and API's are not functioning in full.  Working to complete this fun project to get trailers and rankings working ASAP! 
