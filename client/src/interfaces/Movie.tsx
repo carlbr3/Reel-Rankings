@@ -14,3 +14,8 @@ export default interface Movie {
   imDBRating: string;
   website: string;
 }
+
+export interface UserLogin {
+  email: string;
+  password: string;
+}

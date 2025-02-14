@@ -8,7 +8,11 @@ interface User {
   // Add more user properties as needed
 }
 
-const Ranking: React.FC = () => {
+interface RankingProps {
+  movieTitle?: string;
+}
+
+const Ranking: React.FC<RankingProps> = ({ }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
