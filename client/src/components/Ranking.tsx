@@ -8,7 +8,7 @@ interface User {
   // Add more user properties as needed
 }
 
-const Profile = () => {
+const Ranking: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
@@ -55,4 +55,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Ranking;
