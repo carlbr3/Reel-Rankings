@@ -1,40 +1,36 @@
 {
-  "name": "reel-rank",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Web app that allows users to create custom rankings of their favorite movies and TV shows, compare lists with friends, and receive curated recommendations based on shared user preferences.",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build && node dist/server.js --ignore client",
+    "dev": "npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
-    "dev": "nodemon ./index.js",
-    "build": "tsc",
-    "seed": "node seeders/seed.js"
+    "seed": "node dist/seeds/index.js"
   },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^8.1.0",
-    "dotenv": "^16.3.1",
-    "cors": "^2.8.5",
-    "nodemon": "^3.1.9",
-    "sequelize": "^6.35.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2",
-    "typescript": "^5.0.0",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.0.0",
-    "ts-node": "^10.9.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carlbr3/Reel-Rank.git"
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": "ts,json,js",
+    "exec": "npx tsc && node dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/carlbr3/Reel-Rank/issues"
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3"
   },
-  "homepage": "https://github.com/carlbr3/Reel-Rank#readme"
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "typescript": "^5.4.5"
+  }
 }

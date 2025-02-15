@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import authRoutes from './auth-routes';
+import authRoutes from './authRoutes';
 import apiRoutes from './api/index.ts';
 import { authenticateToken } from '../middleware/auth.ts';
 const router = Router();

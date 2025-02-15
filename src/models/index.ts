@@ -1,3 +1,0 @@
-import "./movie";
-import "./rankings";
-// ... rest of existing code ...
