@@ -19,7 +19,7 @@ const Genre: React.FC<GenreProps> = ({ id, name }) => {
 
   return (
     <div className="genres-container">
-      <h1>Movie Genres</h1>
+      {/* <h1>Movie Genres</h1> */}
       <div className="genre-grid">
         {genreDetails.map((genre: GenreProps) => (
           <button

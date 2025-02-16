@@ -20,13 +20,14 @@ const Genres = () => {
   console.log("Genres page mockGenres:", mockGenres); // Debug log
 
   return (
+    // <p>Hello World</p>
     <div className="genres-page">
       <h1>Movie Genres</h1>
       <div className="genres-grid">
         {mockGenres.map(genre => {
           console.log("Mapping genre:", genre); // Debug log
           return (
-            <Genre 
+            <Genre
               key={genre.id}
               id={genre.id}
               name={genre.name}
