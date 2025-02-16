@@ -1,19 +1,24 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-//import Navbar from './components/Nav';
-//import { Outlet } from 'react-router-dom';
-import Profile from './components/Profile';
-
+import Navbar from "./components/Nav";
+import Profile from "./components/Profile";
+import Genres from "./pages/Genres";
+import MyReelRanks from "./pages/MyReelRanks";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-
   return (
     <div>
-      <Header />
-      <Profile />
-      <Footer />
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Profile />} />
+          <Route path="/genres/*" element={<Genres />} />
+          <Route path="/profile/*" element={<Profile />} />
+          <Route path="/reelranks/*" element={<MyReelRanks />} />
+          <Route path="*" element={<Profile />} />
+        </Routes>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

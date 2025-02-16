@@ -10,9 +10,10 @@ interface User {
 
 interface RankingProps {
   movieTitle?: string;
+  user?: User | null;
 }
 
-const Ranking: React.FC<RankingProps> = ({ }) => {
+const Ranking: React.FC<RankingProps> = ({}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();

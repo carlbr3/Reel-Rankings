@@ -14,6 +14,9 @@ interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 // Define the User class extending Sequelize's Model
 export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+  static create(arg0: { username: string; email: string; password: string; }) {
+    throw new Error("Method not implemented.");
+  }
   public id!: number;
   public username!: string;
   public email!: string;
@@ -35,16 +38,22 @@ export function UserFactory(sequelize: Sequelize): typeof User {
     {
       id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
+        allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
       },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
       },
       password: {
         type: DataTypes.STRING,
@@ -52,8 +61,11 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       },
     },
     {
-      tableName: 'users',  // Name of the table in PostgreSQL
-      sequelize,            // The Sequelize instance that connects to PostgreSQL
+      sequelize,
+      timestamps: true,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'user',
       hooks: {
         // Before creating a new user, hash and set the password
         beforeCreate: async (user: User) => {
@@ -71,3 +83,5 @@ export function UserFactory(sequelize: Sequelize): typeof User {
 
   return User;  // Return the initialized User model
 }
+
+export default User;

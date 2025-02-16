@@ -1,0 +1,34 @@
+/* Debug styles with bright colors and borders */
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid blue;
+  background-color: rgba(0, 0, 255, 0.1);
+  margin: 20px;
+}
+
+.reel-ranking-page {
+  display: block;
+  padding: 20px;
+  border: 2px solid green;
+  background-color: rgba(0, 255, 0, 0.1);
+  margin: 20px;
+}
+
+/* Make sure content is above other elements */
+.genres-grid,
+.profile-container,
+.reel-ranking-page {
+  position: relative;
+  z-index: 1;
+}
