@@ -5,35 +5,55 @@ import Error from "../pages/ErrorPage";
 interface Movie {
   id: number;
   title: string;
-  // Add more movie properties as needed
+  rating?: number;
+  review?: string;
+}
+
+interface User {
+  id: number;
+  username: string;
+  email: string;
+  watchlist: Movie[];
+  ratings: Movie[];
 }
 
 const MyReelRanking = () => {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [mockUser, setMockUser] = useState<User | null>(null);
+
+  // Mock data
+  const mockMovieData: Movie = {
+    id: 1,
+    title: "The Dark Knight",
+    rating: 5,
+    review: "Best superhero movie ever!",
+  };
+
+  const mockUserData: User = {
+    id: 1,
+    username: "MovieFan123",
+    email: "moviefan@example.com",
+    watchlist: [
+      { id: 1, title: "The Dark Knight" },
+      { id: 2, title: "Inception" },
+    ],
+    ratings: [
+      { id: 1, title: "The Dark Knight", rating: 5 },
+      { id: 2, title: "Inception", rating: 4 },
+    ],
+  };
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
         setIsLoading(true);
-        // TODO: Replace with actual API call
-        const mockMovie: Movie = {
-          id: 1,
-          title: "Example Movie",
-        };
-
         // Simulate API delay
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        if (!mockMovie) {
-          throw {
-            title: "Movie Not Found",
-            message: "Movie not found",
-            code: 404
-          };   
-        }
 
-        setSelectedMovie(mockMovie);
+        setSelectedMovie(mockMovieData);
+        setMockUser(mockUserData);
       } catch (err) {
         console.error("Error fetching movie:", err);
         setError("Failed to load movie details");
@@ -62,7 +82,7 @@ const MyReelRanking = () => {
   return (
     <div className="reel-ranking-page">
       <h1>Rate & Review</h1>
-      <Ranking movieTitle={selectedMovie.title} />
+      <Ranking movieTitle={selectedMovie.title} user={mockUser} />
     </div>
   );
 };

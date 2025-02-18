@@ -8,7 +8,12 @@ interface User {
   // Add more user properties as needed
 }
 
-const Profile = () => {
+interface RankingProps {
+  movieTitle?: string;
+  user?: User | null;
+}
+
+const Ranking: React.FC<RankingProps> = ({}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
@@ -55,4 +60,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Ranking;

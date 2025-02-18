@@ -18,8 +18,25 @@ interface Movie {
     website: string;
   }
 
+  const mockMovie: Movie = {
+    title: "The Dark Knight",
+    year: "2008",
+    genre: "Action, Crime, Drama",
+    awards: "Won 2 Oscars. Another 146 wins & 148 nominations.",
+    director: 'Christopher Nolan',
+    plot: 'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
+    imdbID: 'tt0468569',
+    poster: 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2MzE@._V1_SX300.jpg',
+    rating: '9.0',
+    runtime: '2h 32min',
+    actors: 'Christian Bale, Heath Ledger, Aaron Eckhart',
+    country: 'USA',
+    imDBRating: '8.4',
+    website: 'https://www.imdb.com/title/tt0468569/'
+  }
+
   export default function HomePage() {
-    const [movie, setMovie] = useState<Movie | null>(null);
+    const [movie, setMovie] = useState<Movie | null>(mockMovie);
     useEffect(() => {
         const fetchMovie = async () => {
             try {
