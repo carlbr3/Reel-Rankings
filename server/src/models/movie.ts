@@ -71,7 +71,9 @@ const movieModel = (sequelize: Sequelize, DataTypes: any) => {
     }
   );
 
-  (Movie as ModelStatic<Model> & { associate?: Function }).associate = (models: any) => {
+  (Movie as ModelStatic<Model> & { associate?: Function }).associate = (
+    models: any
+  ) => {
     Movie.hasMany(models.Ranking, { foreignKey: "movie_id" });
   };
 

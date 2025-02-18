@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { User } from '../models/index'; // Import the User model
+import { User } from '../models/index.js'; // Add .js extension
 import jwt from 'jsonwebtoken'; // Import the JSON Web Token library
 import bcrypt from 'bcrypt'; // Import the bcrypt library for password hashing
 import { Request, Response } from 'express';

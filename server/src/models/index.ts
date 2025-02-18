@@ -1,6 +1,6 @@
 import sequelize from "../config/connection.js";
-import { UserFactory } from "./user";
-import movieModel from "./movie";
+import { UserFactory } from "./user.js";
+import movieModel from "./movie.js";
 import { DataTypes } from "sequelize";
 
 const User = UserFactory(sequelize);
