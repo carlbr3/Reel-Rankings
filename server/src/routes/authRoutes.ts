@@ -38,7 +38,7 @@ export const login = async (req: LoginRequest, res: LoginResponse) => {
     return res.json({ token }); // Send the token as a JSON response
 };
 // Create a new router instance
-const router = Router();
+const authRouter = Router();
 // POST /login - Login a user
-router.post('/login', login); // Define the login route
-export default router; // Export the router instance
+authRouter.post('/login', login); // Define the login route
+export { authRouter };  // Change to named export
