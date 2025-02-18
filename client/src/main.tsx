@@ -4,7 +4,6 @@ import "./index.css";
 
 import App from "./App.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
-import Home from "./pages/HomePage.tsx";
 import Login from "./components/Login.tsx";
 import Genres from "./pages/Genres.tsx";
 import Profile from "./components/Profile.tsx";

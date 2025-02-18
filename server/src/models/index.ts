@@ -1,7 +1,8 @@
-import sequelize from '../config/connection.js';
-import { UserFactory } from './user.ts';
-import { initMovieModel } from './movie.ts';
+import sequelize from "../config/connection.js";
+import { UserFactory } from "./user";
+import movieModel from "./movie";
+import { DataTypes } from "sequelize";
 
 const User = UserFactory(sequelize);
-const Movie = initMovieModel(sequelize);
+const Movie = movieModel(sequelize, DataTypes);
 export { User, Movie };
