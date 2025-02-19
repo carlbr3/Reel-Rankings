@@ -1,11 +1,11 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS reelrankings-db;
+DROP DATABASE IF EXISTS reelrankings_db;
 
 -- CREATE DATABASE
-CREATE DATABASE reelrankings-db;
+CREATE DATABASE reelrankings_db;
 
 -- Connect to the database
-\c reelrank;
+\c reelrankings_db;
 
 -- Create Users Table
 CREATE TABLE users (
